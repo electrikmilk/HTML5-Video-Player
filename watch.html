@@ -4,10 +4,6 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<?php
-require("database.php");
-?>
-
 <div id="sharemodal">
 
 <a href="javascript:;" onclick="shareClose();">&times;</a>
@@ -24,9 +20,9 @@ require("database.php");
 
 <div class="vinfo" id="info">
 
-<div><?php echo $videoTitle; ?></div>
+<div>Video Title</div>
 
-<!--You can add several buttons-->
+<!--You can had several buttons-->
 <!--<div id="infobtn"><a href="javascript:;" onclick="">Share</a></div>-->
 
 </div>
@@ -35,7 +31,7 @@ require("database.php");
 
 <div class="vcontainer">
 
-<video src="<?php echo $videoURL; ?>" id="video"></video>
+<video src="" id="video"></video>
 
 </div>
 
@@ -70,17 +66,3 @@ require("database.php");
 </div>
 
 <script src="js/player.js"></script>
-
-<?php
-$info = $_GET['info'];
-if($info && $info == 0) {
-?>
-<script>
-var info = document.getElementById("info");
-$(document).ready(function() {
-info.style.display = 'none';
-});
-</script>
-<?php
-}
-?>
