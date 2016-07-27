@@ -8,8 +8,8 @@ ini_set('max_execution_time', 9000);
 $id = $_GET['id'];
 
 //We log in to the database
-mysql_connect('mysql13.000webhost.com', 'a9390651_admin', 'Firefly$01');
-mysql_select_db('a9390651_data');
+mysql_connect('host', 'username', 'password');
+mysql_select_db('database');
 
 $videodata = mysql_fetch_array(mysql_query("select * from videos where id = '$id'"));
 
