@@ -1,9 +1,7 @@
 <?php
 
-ini_set('upload_max_filesize', '2G');
-ini_set('post_max_size', '2G');
-ini_set('max_input_time', 9000);
-ini_set('max_execution_time', 9000);
+//Using PHP isn't required for this player to work, all this file is doing is showing how you could implement a database with video titles and file URL's.
+//So then, all you'd have to do is supply it with an ID and it will get the title and file URL without you having to set it in the code.
 
 $id = $_GET['id'];
 
