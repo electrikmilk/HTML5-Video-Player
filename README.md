@@ -9,7 +9,7 @@ I made this for myself if I ever needed it, and because this took several tries 
 
 #Features
 
-<li>100% Responsive</li>
+<li>Responsive (Completely scaleable)</li>
 <li>Video Duration</li>
 <li>Current Time</li>
 <li>Volume</li>
