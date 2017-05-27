@@ -241,7 +241,7 @@ input[type=range]::-moz-slider-thumb {
 	z-index: 8000;
 	border-radius: 50%;
 	border: 3px solid #fff;
-	background-image: url('../play-icon.svg');
+	background-image: url('../img/play-icon.svg');
 	background-size: 42px 42px;
 	background-position: 28px center;
 	background-repeat: no-repeat;
