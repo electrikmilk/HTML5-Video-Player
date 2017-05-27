@@ -1,4 +1,5 @@
-# HTML5-Video-Widget
+HTML5-Video-Widget
+==========
 A fantastic Responsive HTML5 Video Widget with PHP integration solely for accessing video titles and URL's. Using PHP is not required to use this player.
 
 I hope that people will not only customise this to be able to have their own sites video player, but that this can be used to teach people about HTML5 video and how to control it. Before making this I had no idea how to get the current time or duration of a video, so I really hope this helps other people.
@@ -7,8 +8,8 @@ the <a href="https://github.com/internetgho5t/HTML5-Video-Widget/blob/master/js/
 
 I made this for myself if I ever needed it, and because this took several tries to get right. I did all the research so you can just learn how it works.
 
-#Features
-
+Features
+========
 <li>Responsive (Completely scaleable)</li>
 <li>Video Duration</li>
 <li>Current Time</li>
@@ -16,6 +17,6 @@ I made this for myself if I ever needed it, and because this took several tries 
 <li>Pixel perfect icons</li>
 <li>Fullscreen support</li>
 
-#Completely Customizeable
-
+Completely Customizeable
+=======
 Change the colors of the slidebar knobs, what color the track of the duration bar turns and more by just changing the CSS file.
