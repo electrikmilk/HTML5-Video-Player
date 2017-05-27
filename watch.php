@@ -69,18 +69,4 @@ require("database.php");
 </tr></table>
 </div>
 
-<script src="js/player.js"></script>
-
-<?php
-$info = $_GET['info'];
-if($info && $info == 0) {
-?>
-<script>
-var info = document.getElementById("info");
-$(document).ready(function() {
-info.style.display = 'none';
-});
-</script>
-<?php
-}
-?>
+<script type="text/javascript" src="player.js"></script>
