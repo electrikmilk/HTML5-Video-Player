@@ -6,10 +6,9 @@
 $id = $_GET['id'];
 
 //We log in to the database
-mysql_connect('host', 'username', 'password');
-mysql_select_db('database');
+$connect = mysqli_connect('host', 'username', 'password', 'database');
 
-$videodata = mysql_fetch_array(mysql_query("select * from videos where id = '$id'"));
+$videodata = mysqli_fetch_array(mysqli_query($connect,"select * from videos where id = '$id'"));
 
 $videoURL = $videodata['url'];
 
