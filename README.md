@@ -15,6 +15,7 @@ Features
 <li>Volume/Mute Control</li>
 <li>Pixel perfect icons</li>
 <li>Fullscreen support (Plus F11/F trigger)</li>
+<li>Hit space to toggle play/pause</li>
 <li>Controls hide on idle</li>
 
 Completely Customizable
