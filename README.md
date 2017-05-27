@@ -11,12 +11,12 @@ I made this for myself if I ever needed it, and because this took several tries 
 Features
 ========
 <li>Responsive (Completely scaleable)</li>
-<li>Video Duration</li>
-<li>Current Time</li>
-<li>Volume</li>
+<li>Current Time + Video Duration</li>
+<li>Volume/Mute Control</li>
 <li>Pixel perfect icons</li>
-<li>Fullscreen support</li>
+<li>Fullscreen support (Plus F11/F trigger)</li>
+<li>Controls hide on idle</li>
 
-Completely Customizeable
+Completely Customizable
 =======
-Change the colors of the slidebar knobs, what color the track of the duration bar turns and more by just changing the CSS file.
+Change the colors of the slide-bar knobs, what color the track of the duration bar turns and more by just changing the CSS file.
