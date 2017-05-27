@@ -1,3 +1,5 @@
+/* To change #seekbar and #volumebar color, change #3498db in their gradient here, and in player.js in the Slider track function */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);
 html,
 body {
