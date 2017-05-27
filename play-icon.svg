@@ -6,12 +6,16 @@
 	.st0{fill:#FFFFFF;}
 </style>
 <g>
-	
-		<image style="overflow:visible;opacity:0.7;enable-background:new    ;" width="124" height="156" xlink:href="2ECBEC926A5B71A7.png"  transform="matrix(1 0 0 1 -4.5 -3)">
-	</image>
 	<g>
-		<path class="st0" d="M11,17.5c0-4,5-6,8-4c2,1,78,55,82,58c5,4,4,7,0,10c-3,2-73,49-80,54c-6,4-10,0-10-3
-			C11,125.5,11,24.5,11,17.5z"/>
+
+			<image style="overflow:visible;opacity:0.75;" width="124" height="156" xlink:href="2ECBEC926A5B71A7.png"  transform="matrix(1 0 0 1 3 4)">
+		</image>
+		<g>
+			<g>
+				<path class="st0" d="M11,17.5c0-4,5-6,8-4c2,1,78,55,82,58c5,4,4,7,0,10c-3,2-73,49-80,54c-6,4-10,0-10-3
+					C11,125.5,11,24.5,11,17.5z"/>
+			</g>
+		</g>
 	</g>
 </g>
 </svg>
