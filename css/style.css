@@ -18,6 +18,18 @@ body {
 	/* Gecko Browsers */
 }
 
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+
 .maincont {
 	position: relative;
 }
@@ -28,6 +40,10 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
+    background: -webkit-linear-gradient(black, transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(black, transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(black, transparent); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(black, transparent); /* Standard syntax */
 }
 
 .vinfo div {
@@ -35,7 +51,7 @@ body {
 	color: #fff;
 	font-size: 20px;
 	z-index: 500;
-	text-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
 .vinfo div:first-child {
@@ -81,8 +97,11 @@ video {
 	left: 0;
 	right: 0;
 	padding: 5px;
-	/*background-color: rgba(0,0,0,.5);*/
 	z-index: 6000;
+	background: -webkit-linear-gradient(transparent, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent, black); /* Standard syntax */
 }
 
 #controls table {
@@ -104,7 +123,7 @@ button {
 
 #seekbar {
 	-webkit-appearance: none;
-	background: linear-gradient(to right, #3498db 0%, #3498db 0%, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .5) 62.5%);
+	background: linear-gradient(to right, #3498db 0%, #3498db 0%, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .1) 62.5%);
 	cursor: pointer;
 	height: 4px;
 	margin: 0;
@@ -199,7 +218,7 @@ input[type=range]::-moz-slider-thumb {
 	z-index: 8000;
 	border-radius: 50%;
 	border: 3px solid #fff;
-	background-image: url('../img/play-icon.png');
+	background-image: url('../play-icon.png');
 	background-size: 42px 42px;
 	background-position: 28px center;
 	background-repeat: no-repeat;
@@ -234,10 +253,10 @@ input[type=range]::-moz-slider-thumb {
 }
 
 .load {
-	border-bottom: 6px solid rgba(0, 0, 0, .1);
-	border-left: 6px solid rgba(0, 0, 0, .1);
-	border-right: 6px solid rgba(0, 0, 0, .1);
-	border-top: 6px solid rgba(0, 0, 0, .4);
+	border-bottom: 6px solid rgba(255, 255, 255, .4);
+	border-left: 6px solid rgba(255, 255, 255, .4);
+	border-right: 6px solid rgba(255, 255, 255, .4);
+	border-top: 6px solid rgba(255, 255, 255, .8);
 	border-radius: 100%;
 	height: 30px;
 	width: 30px;
@@ -249,6 +268,7 @@ input[type=range]::-moz-slider-thumb {
 	left: 0;
 	right: 0;
 	bottom: 50%;
+	z-index: 600000000;
 }
 
 .large {
@@ -284,6 +304,24 @@ input[type=range]::-moz-slider-thumb {
 	margin: auto;
 	padding: 10px;
 	text-align: center;
+}
+
+@-webkit-keyframes rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 @media only screen and (max-device-width: 480px) {
