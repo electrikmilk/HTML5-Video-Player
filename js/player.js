@@ -27,7 +27,9 @@ $(document).ready(function() {
 	video.load();
 	exists();
 	//setBlob(video.src);
-	$("#video").on('contextmenu',function() { return false; });
+	$("#video").on('contextmenu', function() {
+		return false;
+	});
 });
 
 // Scramble Video Source
@@ -91,17 +93,20 @@ muteButton.addEventListener("click", function() {
 
 // Event listener for the full-screen button
 fullScreenButton.addEventListener("click", function() {
-	if (video.requestFullscreen) {
-		video.requestFullscreen();
+	var element = document.body;
+	// Supports most browsers and their versions.
+	var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+	if (requestMethod) { // Native full screen.
+		requestMethod.call(element);
 	}
-	else if (video.mozRequestFullScreen) {
-		video.mozRequestFullScreen(); // Firefox
-	}
-	else if (video.webkitRequestFullscreen) {
-		video.webkitRequestFullscreen(); // Chrome and Safari
+	else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+		var wscript = new ActiveXObject("WScript.Shell");
+		if (wscript !== null) {
+			wscript.SendKeys("{F11}");
+		}
 	}
 });
-
 
 // Event listener for the seek bar
 seekBar.addEventListener("change", function() {
@@ -181,7 +186,7 @@ function share() {
 
 function shareClose() {
 
-	// Pause the video
+	// Resume the video
 	video.play();
 	playpauseButton.innerHTML = '<span class="typcn typcn-media-play"></span>';
 
@@ -241,7 +246,6 @@ video.onwaiting = function() {
 };
 
 //Slider track
-
 $(function() {
 
 	$('.wrap').addClass('loaded');
@@ -293,30 +297,57 @@ $(function() {
 
 });
 
-// Hide/Show Controls + Info
-$("#video").on('mouseout', function() {
-$("#info").fadeOut();
-$("#controls").fadeOut();
-video.style.cursor = 'none';
-});
-
-$("#video").on('mouseover', function() {
-$("#info").fadeIn();
-$("#controls").fadeIn();
-video.style.cursor = 'default';
-});
-
+// Hide/show controls + info on idle
 var timeout = null;
 
-$(document).on('mousemove', function() {
+$("#video").on('mousemove', function() {
 	clearTimeout(timeout);
 	$("#info").fadeIn();
-$("#controls").fadeIn();
-video.style.cursor = 'default';
+	$("#controls").fadeIn();
+	video.style.cursor = 'default';
 
 	timeout = setTimeout(function() {
-	$("#info").fadeOut();
-$("#controls").fadeOut();
-video.style.cursor = 'none';
+		$("#info").fadeOut();
+		$("#controls").fadeOut();
+		video.style.cursor = 'none';
 	}, 3000);
 });
+
+// Key Functions
+
+//On space pressed
+$(window).keypress(function(e) {
+	if (e.keyCode === 0 || e.keyCode === 32) {
+		e.preventDefault();
+		bigplay.style.display = 'none';
+		controls.style.display = '';
+		if (video.paused) {
+			playpauseButton.innerHTML = '<span class="typcn typcn-media-pause"></span>';
+			video.play();
+		}
+		else {
+			playpauseButton.innerHTML = '<span class="typcn typcn-media-play"></span>';
+			video.pause();
+		}
+	}
+});
+
+// 'F' is for Fullscreen
+$(window).keypress(function(e) {
+	if (e.keyCode === 0 || e.keyCode === 102) {
+		e.preventDefault();
+		var element = document.body;
+		// Supports most browsers and their versions.
+		var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+		if (requestMethod) { // Native full screen.
+			requestMethod.call(element);
+		}
+		else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+			var wscript = new ActiveXObject("WScript.Shell");
+			if (wscript !== null) {
+				wscript.SendKeys("{F11}");
+			}
+		}
+	}
+})
