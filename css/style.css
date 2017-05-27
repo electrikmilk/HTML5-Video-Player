@@ -31,16 +31,6 @@ video::-webkit-media-controls-panel {
 	/* Adjust as needed */
 }
 
-input[type=range][orient=vertical] {
-	writing-mode: bt-lr;
-	/* IE */
-	-webkit-appearance: slider-vertical;
-	/* WebKit */
-	width: 8px;
-	height: 175px;
-	padding: 0 5px;
-}
-
 .maincont {
 	position: relative;
 }
@@ -241,7 +231,7 @@ input[type=range]::-moz-slider-thumb {
 	z-index: 8000;
 	border-radius: 50%;
 	border: 3px solid #fff;
-	background-image: url('../img/play-icon.svg');
+	background-image: url('../play-icon.svg');
 	background-size: 42px 42px;
 	background-position: 28px center;
 	background-repeat: no-repeat;
@@ -352,4 +342,90 @@ input[type=range]::-moz-slider-thumb {
 	#bigplay {
 		visibility: hidden;
 	}
+}
+
+/* Tooltips */
+
+
+/* Add this attribute to the element that needs a tooltip */
+
+[tooltip] {
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+
+/* Hide the tooltip content by default */
+
+[tooltip]:before,
+[tooltip]:after {
+	visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	pointer-events: none;
+}
+
+
+/* Position tooltip above the element */
+
+[tooltip]:before {
+	position: absolute;
+	bottom: 90%;
+	left: 50%;
+	margin-bottom: 5px;
+	margin-left: -45%;
+	padding: 7px;
+	width: auto;
+	border: .5px solid #555;
+	font-weight: bold !important;
+	/*   -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px; */
+	background-color: rgba(0, 0, 0, .9);
+	/*box-shadow: 0 2px 4px rgba(100, 100, 100, .5);*/
+	color: #fff;
+	content: attr(tooltip);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+
+/* Triangle hack to make tooltip look like a speech bubble */
+
+[tooltip]:after {
+	position: absolute;
+	bottom: 90%;
+	left: 50%;
+	margin-left: -5px;
+	width: 0;
+	opacity: 0 !important;
+	border-top: 5px solid #000;
+	border-top: 5px solid hsla(0, 0, 0, 0.9);
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	content: " ";
+	font-size: 0;
+	line-height: 0;
+}
+
+
+/* Show tooltip content on hover */
+
+[tooltip]:hover:before,
+[tooltip]:hover:after {
+	visibility: visible;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+/* Fixes */
+#fullscreen:before {
+margin-left: -100px;
+}
+#mute:before {
+margin-left: -25px;
 }

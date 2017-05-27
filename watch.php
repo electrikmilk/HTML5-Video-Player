@@ -1,13 +1,10 @@
-<script src="//code.jquery.com/jquery-latest.js"></script>
-
-<link rel="stylesheet" href="css/typicons.min.css">
-
-<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="style/typicons.min.css">
+<link rel="stylesheet" href="style/style.css">
 
 <?php
-require("database.php");
+require("data.php");
 ?>
-
 <div id="sharemodal">
 
 <a href="javascript:;" onclick="shareClose();">&times;</a>
@@ -22,6 +19,10 @@ require("database.php");
 
 <div id="maincont">
 
+<?php
+if($_GET['info'] !== "0") {
+?>
+
 <div class="vinfo" id="info">
 
 <div><?php echo $videoTitle; ?></div>
@@ -31,11 +32,15 @@ require("database.php");
 
 </div>
 
+<?php
+}
+?>
+
 <div class="load small" id="load"></div>
 
 <div class="vcontainer">
 
-<video src="<?php echo $videoURL; ?>" id="video"></video>
+<video src="<?php echo $videoURL; ?>" id="video" type="video/mp4"></video>
 
 </div>
 
@@ -55,7 +60,7 @@ require("database.php");
 <td class="time" id="duration">0:00</td>
 
 <td style="width: 30px;">
-<button type="button" id="mute"><span class="typcn typcn-volume-up"></span></button>
+<button type="button" id="mute" tooltip="Mute"><span class="typcn typcn-volume-up"></span></button>
 </td>
 
 <td style="vertical-align: middle;width: 250px;">
@@ -63,7 +68,7 @@ require("database.php");
 </td>
 
 <td style="width: 50px;">
-<button type="button" id="fullscreen"><span class="typcn typcn-arrow-maximise"></span></button>
+<button type="button" id="fullscreen" tooltip="Go Fullscreen"><span class="typcn typcn-arrow-maximise"></span></button>
 </td>
 
 </tr></table>

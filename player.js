@@ -26,8 +26,6 @@ $(document).ready(function() {
 	bigplay.style.display = 'none';
 	video.load();
 	exists();
-	// Enable this function to blob video urls
-	// This protects videos from being downloaded easily
 	//setBlob(video.src);
 	$("#video").on('contextmenu', function() {
 		return false;
@@ -84,11 +82,13 @@ muteButton.addEventListener("click", function() {
 		muteButton.innerHTML = '<span class="typcn typcn-volume-up"></span>';
 		video.muted = false;
 		volumeBar.value = 1;
+		$("#mute").attr("tooltip", "Mute");
 	}
 	else {
 		muteButton.innerHTML = '<span class="typcn typcn-volume-mute"></span>';
 		video.muted = true;
 		volumeBar.value = 0;
+		$("#mute").attr("tooltip", "Unmute");
 	}
 });
 
@@ -97,6 +97,7 @@ muteButton.addEventListener("click", function() {
 fullScreenButton.addEventListener("click", function() {
 	if (!document.fullscreenElement && // alternative standard method
 		!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+		$("#fullscreen").attr("tooltip", "Exit Fullscreen");
 		if (document.documentElement.requestFullscreen) {
 			document.documentElement.requestFullscreen();
 		}
@@ -111,6 +112,7 @@ fullScreenButton.addEventListener("click", function() {
 		}
 	}
 	else {
+		$("#fullscreen").attr("tooltip", "Go Fullscreen");
 		if (document.exitFullscreen) {
 			document.exitFullscreen();
 		}
@@ -194,20 +196,16 @@ function hidePlay() {
 }
 
 function share() {
-
 	// Pause the video
 	video.pause();
-	playpauseButton.innerHTML = '<span class="typcn typcn-media-pause"></span>';
-
+	playpauseButton.innerHTML = '<span class="typcn typcn-media-play"></span>';
 	$("sharemodal").slideToggle();
 }
 
 function shareClose() {
-
 	// Resume the video
 	video.play();
-	playpauseButton.innerHTML = '<span class="typcn typcn-media-play"></span>';
-
+	playpauseButton.innerHTML = '<span class="typcn typcn-media-pause"></span>';
 	$("sharemodal").slideToggle();
 }
 
@@ -356,6 +354,7 @@ $(window).keypress(function(e) {
 		e.preventDefault();
 		if (!document.fullscreenElement && // alternative standard method
 			!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+			$("#fullscreen").attr("tooltip", "Exit Fullscreen");
 			if (document.documentElement.requestFullscreen) {
 				document.documentElement.requestFullscreen();
 			}
@@ -370,6 +369,7 @@ $(window).keypress(function(e) {
 			}
 		}
 		else {
+			$("#fullscreen").attr("tooltip", "Go Fullscreen");
 			if (document.exitFullscreen) {
 				document.exitFullscreen();
 			}
@@ -386,12 +386,13 @@ $(window).keypress(function(e) {
 	}
 });
 
-	// 'F11' is for Fullscreen
+// 'F11' is for Fullscreen
 $(window).keypress(function(e) {
 	if (e.keyCode === 0 || e.keyCode === 122) {
 		e.preventDefault();
 		if (!document.fullscreenElement && // alternative standard method
 			!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+			$("#fullscreen").attr("tooltip", "Exit Fullscreen");
 			if (document.documentElement.requestFullscreen) {
 				document.documentElement.requestFullscreen();
 			}
@@ -406,6 +407,7 @@ $(window).keypress(function(e) {
 			}
 		}
 		else {
+			$("#fullscreen").attr("tooltip", "Go Fullscreen");
 			if (document.exitFullscreen) {
 				document.exitFullscreen();
 			}

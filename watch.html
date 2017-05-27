@@ -1,8 +1,6 @@
-<script src="//code.jquery.com/jquery-latest.js"></script>
-
-<link rel="stylesheet" href="css/typicons.min.css">
-
-<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="style/typicons.min.css">
+<link rel="stylesheet" href="style/style.css">
 
 <div id="sharemodal">
 
@@ -20,7 +18,7 @@
 
 <div class="vinfo" id="info">
 
-<div>Title</div>
+<div>Video Title</div>
 
 <!--You can add several buttons-->
 <!--<div id="infobtn"><a href="javascript:;" onclick="">Share</a></div>-->
@@ -31,7 +29,7 @@
 
 <div class="vcontainer">
 
-<video src="" id="video"></video>
+<video src="<?php echo $videoURL; ?>" id="video" type="video/mp4"></video>
 
 </div>
 
@@ -51,7 +49,7 @@
 <td class="time" id="duration">0:00</td>
 
 <td style="width: 30px;">
-<button type="button" id="mute"><span class="typcn typcn-volume-up"></span></button>
+<button type="button" id="mute" tooltip="Mute"><span class="typcn typcn-volume-up"></span></button>
 </td>
 
 <td style="vertical-align: middle;width: 250px;">
@@ -59,7 +57,7 @@
 </td>
 
 <td style="width: 50px;">
-<button type="button" id="fullscreen"><span class="typcn typcn-arrow-maximise"></span></button>
+<button type="button" id="fullscreen" tooltip="Go Fullscreen"><span class="typcn typcn-arrow-maximise"></span></button>
 </td>
 
 </tr></table>
