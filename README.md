@@ -17,6 +17,7 @@ Features
 <li>Fullscreen support (Plus F11/F trigger)</li>
 <li>Hit space to toggle play/pause</li>
 <li>Controls hide on idle</li>
+<li>Blob URL's</li>
 
 Completely Customizable
 =======

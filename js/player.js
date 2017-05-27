@@ -26,6 +26,8 @@ $(document).ready(function() {
 	bigplay.style.display = 'none';
 	video.load();
 	exists();
+	// Enable this function to blob video urls
+	// This protects videos from being downloaded easily
 	//setBlob(video.src);
 	$("#video").on('contextmenu', function() {
 		return false;
