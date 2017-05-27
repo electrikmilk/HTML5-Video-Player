@@ -93,17 +93,33 @@ muteButton.addEventListener("click", function() {
 
 // Event listener for the full-screen button
 fullScreenButton.addEventListener("click", function() {
-	var element = document.body;
-	// Supports most browsers and their versions.
-	var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-
-	if (requestMethod) { // Native full screen.
-		requestMethod.call(element);
+	if (!document.fullscreenElement && // alternative standard method
+		!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+		if (document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		}
+		else if (document.documentElement.msRequestFullscreen) {
+			document.documentElement.msRequestFullscreen();
+		}
+		else if (document.documentElement.mozRequestFullScreen) {
+			document.documentElement.mozRequestFullScreen();
+		}
+		else if (document.documentElement.webkitRequestFullscreen) {
+			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		}
 	}
-	else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-		var wscript = new ActiveXObject("WScript.Shell");
-		if (wscript !== null) {
-			wscript.SendKeys("{F11}");
+	else {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		}
+		else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		}
+		else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		}
+		else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
 		}
 	}
 });
@@ -336,18 +352,70 @@ $(window).keypress(function(e) {
 $(window).keypress(function(e) {
 	if (e.keyCode === 0 || e.keyCode === 102) {
 		e.preventDefault();
-		var element = document.body;
-		// Supports most browsers and their versions.
-		var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-
-		if (requestMethod) { // Native full screen.
-			requestMethod.call(element);
+		if (!document.fullscreenElement && // alternative standard method
+			!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+			if (document.documentElement.requestFullscreen) {
+				document.documentElement.requestFullscreen();
+			}
+			else if (document.documentElement.msRequestFullscreen) {
+				document.documentElement.msRequestFullscreen();
+			}
+			else if (document.documentElement.mozRequestFullScreen) {
+				document.documentElement.mozRequestFullScreen();
+			}
+			else if (document.documentElement.webkitRequestFullscreen) {
+				document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			}
 		}
-		else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-			var wscript = new ActiveXObject("WScript.Shell");
-			if (wscript !== null) {
-				wscript.SendKeys("{F11}");
+		else {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			}
+			else if (document.msExitFullscreen) {
+				document.msExitFullscreen();
+			}
+			else if (document.mozCancelFullScreen) {
+				document.mozCancelFullScreen();
+			}
+			else if (document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
 			}
 		}
 	}
-})
+});
+
+	// 'F11' is for Fullscreen
+$(window).keypress(function(e) {
+	if (e.keyCode === 0 || e.keyCode === 122) {
+		e.preventDefault();
+		if (!document.fullscreenElement && // alternative standard method
+			!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
+			if (document.documentElement.requestFullscreen) {
+				document.documentElement.requestFullscreen();
+			}
+			else if (document.documentElement.msRequestFullscreen) {
+				document.documentElement.msRequestFullscreen();
+			}
+			else if (document.documentElement.mozRequestFullScreen) {
+				document.documentElement.mozRequestFullScreen();
+			}
+			else if (document.documentElement.webkitRequestFullscreen) {
+				document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+			}
+		}
+		else {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			}
+			else if (document.msExitFullscreen) {
+				document.msExitFullscreen();
+			}
+			else if (document.mozCancelFullScreen) {
+				document.mozCancelFullScreen();
+			}
+			else if (document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			}
+		}
+	}
+});
