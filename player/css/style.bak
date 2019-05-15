@@ -5,8 +5,8 @@ body {
   -webkit-font-smoothing: antialiased;
   color: #fff;
   font-size: 16px;
-  line-height: 20px;
-  background-color: #000;
+  line-height: 1.6;
+  background-color: black;
   overflow: hidden;
 }
 
@@ -142,11 +142,10 @@ button {
   background: linear-gradient(to right, #de2233 0%, #de2233 0%, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .1) 62.5%);
   cursor: pointer;
   height: 4px;
-  margin: 0;
   transitionx: 0.1s ease-in;
   vertical-align: bottom;
   width: 100%;
-  margin-top: 2.8px;
+  margin: 3px 0 0;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -201,11 +200,10 @@ input[type=range]::-moz-slider-thumb {
   background: linear-gradient(to right, #de2233 100%, #de2233 100%, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .5) 62.5%);
   cursor: pointer;
   height: 4px;
-  margin: 0;
   transitionx: 0.1s ease-in;
   vertical-align: bottom;
   width: 100%;
-  margin-top: 2.8px;
+  margin: 3px 0 0;
 }
 
 :focus {
@@ -328,10 +326,9 @@ input[type=range]::-moz-slider-thumb {
 
 #sharemodal #cont {
   position: absolute;
-  margin: 0;
   top: 50%;
   left: 50%;
-  margin-right: -50%;
+  margin: 0 -50% 0 0;
   transform: translate(-50%, -50%);
 }
 
@@ -396,7 +393,7 @@ input[type=range]::-moz-slider-thumb {
   margin-left: -45%;
   padding: 7px;
   width: auto;
-  border: .5px solid #555;
+  border: 1px solid #555;
   font-weight: bold !important;
   /*   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
