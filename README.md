@@ -1,17 +1,21 @@
-HTML5 Video Player
-==========
+# HTML5 Video Player
 
-Responsive HTML5 video player with PHP and MySQL integration.
+_No BS, just pure JS._
 
-This is mostly to help other people out with building their own players. It took me a while to do all of the research to build this thing, so I thought I'd put it all in a repo.
+Responsive HTML5 video player written in good ol' pure HTML, CSS and JavaScript.
 
-Features
-========
-<li>Responsive (Completely scaleable)</li>
-<li>Current Time + Video Duration</li>
-<li>Volume/Mute Control</li>
-<li>Pixel perfect icons</li>
-<li>Fullscreen support (Plus F11/F trigger)</li>
-<li>Hit space to toggle play/pause</li>
-<li>Controls hide on idle</li>
-<li>Blob URL's (sort-of)</li>
+Created to help others, looking to build their own simple HTML5 video player. Created specifically to be simple and easy to understand. 
+
+### Out of the box features
+- Fulfills initial user interaction requirement
+- Responsive
+- Play/Pause toggle
+- Volume slider, mute toggle
+- Controls hide on idle
+- Current Time and Duration display
+- Seek slider
+- Icons using a web font (FontAwesome)
+- Blob URLs
+- Keyboard triggers
+  - `F11` or `F`: Fullscreen
+  - `Spacebar`: Play\Pause

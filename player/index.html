@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 Video Player</title>
+	<script src="https://kit.fontawesome.com/1aac9df22f.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="player.js" async></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="sharemodal">
+	<div id="cont">
+		<div id="closebutton" onclick="shareClose();">CLOSE</div>
+	</div>
+</div>
+
+<div id="refresh" style="display: none;" onclick="refresh();"><span class="typcn typcn-refresh"></span></div>
+<div id="error" style="display: none;"><span style="font-weight: bold;font-size: 25px;">That video doesn't exist.</span><br/>Sorry about that.
+</div>
+<div id="bigplay" onclick="hidePlay();"><span class="typcn typcn-media-play"></span></div>
+<div id="maincont">
+	<div class="vinfo" id="info">
+		<div>&nbsp</div>
+		<!--You can add several buttons-->
+		<div id="infobtn"><a href="javascript:" onclick="share();">Share</a></div>
+	</div>
+	<input type="hidden" id="vid" value=""/>
+	<div class="load small" id="load"></div>
+	<div class="vcontainer">
+		<video src="" poster="" id="video" type="video/mp4"></video>
+	</div>
+	<div id="controls">
+		<table>
+			<tr>
+				<td style="width: 50px;">
+					<button type="button" id="playpause"><span class="typcn typcn-media-play"></span></button>
+				</td>
+				<td class="time" id="current">0:00</td>
+				<td style="vertical-align: middle;width: 900px;">
+					<div class="wrap"><input type="range" id="seekbar" value="0"></div>
+				</td>
+				<td class="time" id="duration">0:00</td>
+				<td style="width: 30px;">
+					<button type="button" id="mute" tooltip="Mute"><span class="typcn typcn-volume-up"></span></button>
+				</td>
+				<td style="vertical-align: middle;width: 250px;">
+					<div class="wrap"><input type="range" id="volumebar" min="0" max="1" step="0.1" value="0"></div>
+				</td>
+				<td style="width: 50px;">
+					<button type="button" id="fullscreen" tooltip="Go Fullscreen">
+						<span class="typcn typcn-arrow-maximise"></span></button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>
